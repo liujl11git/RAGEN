@@ -3,6 +3,10 @@ Borrowed from verl.trainer.main_ppo.py
 Note that we don't combine the main with ray_trainer as ray_trainer is used by other main.
 """
 
+import os
+os.environ["TRANSFORMERS_USE_FLASH_ATTENTION"] = "0"
+
+
 from ragen.trainer.agent_trainer import RayAgentTrainer
 
 import ray
